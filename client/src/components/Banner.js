@@ -103,7 +103,6 @@ export const Banner = () => {
                 <span className="tagline">Welcome to my Portfolio</span>
                 <h1>{`Hi! I'm Ismael`} <span className="txt-rotate" dataPeriod="1000" data-rotate='[ "Web Developer", "Web Back-End", "Web Front-End" ]'><span className="wrap">{text}</span></span></h1>
                   <p>I am a graduate of the Henry platform with great adaptability to any work environment, I integrate easily. I learn very fast and I am always studying new technologies.</p>
-                  <button onClick={(e) => setShow(true)}>Let’s Connect <ArrowRightCircle size={25} /></button>
               </div>}
             </TrackVisibility>
           </Col>
@@ -117,48 +116,6 @@ export const Banner = () => {
           </Col>
         </Row>
       </Container>
-      <Modal centered={true} show={show} onHide={handleClose}>
-      
-        <Modal.Body>
-          <Form>
-            <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-              <Form.Label>Email address</Form.Label>
-              <Form.Control
-                type="email"
-                onChange={(e) => handleChange('email', e.target.value)}
-                value={connect.email}
-                placeholder="name@example.com"
-                autoFocus
-              />
-            </Form.Group>
-            <Form.Group
-              type="text"
-              onChange={(e)=> handleChange('message', e.target.value)}
-              value={connect.message}
-              placeholder="Hello, I would like to talk..."
-              className="mb-3"
-              controlId="exampleForm.ControlTextarea1"
-            >
-              <Form.Label>Example textarea</Form.Label>
-              <Form.Control as="textarea" rows={3} />
-            </Form.Group>
-          </Form>
-        </Modal.Body>
-        <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose}>
-            Close
-          </Button>
-          <Button variant="primary" onClick={handleConnect}>
-            {buttonText}
-          </Button>
-          {
-            status.message &&
-            <Col>
-              <p className={status.success === false ? "danger" : "success"}>{status.message}</p>
-            </Col>
-          }
-        </Modal.Footer>
-      </Modal>
     </section>
   )
 }

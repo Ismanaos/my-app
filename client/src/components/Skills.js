@@ -1,6 +1,12 @@
 import meter1 from "../assets/img/meter1.svg";
 import meter2 from "../assets/img/meter2.svg";
 import meter3 from "../assets/img/meter3.svg";
+import meter4 from "../assets/img/meter4.svg";
+import meter5 from "../assets/img/meter5.svg";
+import meter6 from "../assets/img/meter6.svg";
+import meter7 from "../assets/img/meter7.svg";
+import meter8 from "../assets/img/meter8.svg";
+import meter9 from "../assets/img/meter9.svg";
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import arrow1 from "../assets/img/arrow1.svg";
@@ -35,23 +41,39 @@ export const Skills = () => {
                 <div className="col-12">
                     <div className="skill-bx wow zoomIn">
                         <h2>Skills</h2>
-                        <p>Habilidades aprendidas que mejor manejo.<br></br> Aprendidas y perfeccionadas en mi recorrido por el bootcamp.</p>
+                        <p>Skills that I manage best<br></br> I learned and perfected on my tour of the bootcamp.</p>
                         <Carousel responsive={responsive} infinite={true} className="owl-carousel owl-theme skill-slider">
                             <div className="item">
-                                <img src={meter1} alt="Image" />
-                                <h5>Web Development</h5>
+                                <img src={meter4} alt="Image" />
+                                <h5>JavaScript</h5>
                             </div>
                             <div className="item">
                                 <img src={meter2} alt="Image" />
-                                <h5>Brand Identity</h5>
+                                <h5>React</h5>
                             </div>
                             <div className="item">
                                 <img src={meter3} alt="Image" />
                                 <h5>NodeJs</h5>
                             </div>
                             <div className="item">
+                                <img src={meter6} alt="Image" />
+                                <h5>Redux</h5>
+                            </div>
+                            <div className="item">
+                                <img src={meter5} alt="Image" />
+                                <h5>TypeScript</h5>
+                            </div>
+                            <div className="item">
                                 <img src={meter1} alt="Image" />
-                                <h5>React</h5>
+                                <h5>PostreSQL</h5>
+                            </div>
+                            <div className="item">
+                                <img src={meter7} alt="Image" />
+                                <h5>Git & GitHub</h5>
+                            </div>
+                            <div className="item">
+                                <img src={meter9} alt="Image" />
+                                <h5>Bootstrap</h5>
                             </div>
                         </Carousel>
                     </div>

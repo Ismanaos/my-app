@@ -11,17 +11,17 @@ export const Projects = () => {
 
   const projects = [
     {
-      title: "Business Startup",
-      description: "Design & Development",
+      title: "On Drive",
+      description: "Design",
       imgUrl: projImg1,
     },
     {
-      title: "Business Startup",
-      description: "Design & Development",
+      title: "On Drive",
+      description: "Development",
       imgUrl: projImg2,
     },
     {
-      title: "Business Startup",
+      title: "On Drive",
       description: "Design & Development",
       imgUrl: projImg3,
     },
@@ -36,7 +36,7 @@ export const Projects = () => {
               {({ isVisible }) =>
               <div className={isVisible ? "animate__animated animate__fadeIn": ""}>
                 <h2>Projects</h2>
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                <p>In the bootcamp I passed several tests, some of them were to carry out various projects. Although I did two by myself, there was one that I did with several students using agile methodologies.</p>
                 <Tab.Container id="projects-tabs" defaultActiveKey="first">
                   <Nav variant="pills" className="nav-pills mb-5 justify-content-center align-items-center" id="pills-tab">
                     <Nav.Item>
