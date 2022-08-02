@@ -3,7 +3,7 @@ const router = express.Router();
 const cors = require("cors");
 const nodemailer = require("nodemailer");
 const PORT = process.env.PORT || 5000;
-
+const {GMAIL, GMAIL_PASSWORD} = process.env;
 
 const app = express();
 app.use(cors());
@@ -16,8 +16,8 @@ console.log(process.env.EMAIL_PASS);
 const contactEmail = nodemailer.createTransport({
   service: 'gmail',
   auth: {
-    user: "ismadavid120@gmail.com",
-    pass: "fqoctpmvenhdasvo"
+    user: GMAIL,
+    pass: GMAIL_PASSWORD
   },
 });
 
@@ -30,18 +30,16 @@ contactEmail.verify((error) => {
 });
 
 router.post("/contact", (req, res) => {
-  const name = req.body.firstName + req.body.lastName;
-  const email = req.body.email;
-  const message = req.body.message;
-  const phone = req.body.phone;
+  const {email, message, phone, firstName, lastName} = req.body;
+  const name = `${firstName} ${lastName}`
   const mail = {
     from: name,
-    to: "ismadavid120@gmail.com",
+    to: GMAIL,
     subject: "Contacto por submit - Portfolio",
     html: `<p>Name: ${name}</p>
-           <p>Email: ${email}</p>
-           <p>Phone: ${phone}</p>
-           <p>Message: ${message}</p>`,
+          <p>Email: ${email}</p>
+          <p>Phone: ${phone}</p>
+          <p>Message: ${message}</p>`,
   };
   contactEmail.sendMail(mail, (error) => {
     if (error) {
@@ -51,3 +49,21 @@ router.post("/contact", (req, res) => {
     }
   });
 });
+
+router.post('/connect', (req, res) => {
+  const {email, message} = req.body;
+  const mail = {
+    from: email,
+    to: GMAIL,
+    subject: "Contacto por submit - Portfolio",
+    html: `<p>Message: ${message}</p>`,
+  };
+  contactEmail.sendMail(mail, (error) => {
+    if (error) {
+      res.json(error);
+    } else {
+      res.json({ code: 200, status: "Message Sent" });
+    }
+  })
+})
+

@@ -1,8 +1,8 @@
+/* eslint-disable react/jsx-no-target-blank */
 import { useState, useEffect } from "react";
 import { Navbar, Nav, Container } from "react-bootstrap";
 import logo from '../assets/img/logo.svg';
 import navIcon1 from '../assets/img/nav-icon1.svg';
-import navIcon2 from '../assets/img/nav-icon2.svg';
 import navIcon3 from '../assets/img/nav-icon3.svg';
 import { HashLink } from 'react-router-hash-link';
 import {
@@ -50,9 +50,8 @@ export const NavBar = () => {
             </Nav>
             <span className="navbar-text">
               <div className="social-icon">
-                <a href="#"><img src={navIcon1} alt="" /></a>
-                <a href="#"><img src={navIcon2} alt="" /></a>
-                <a href="#"><img src={navIcon3} alt="" /></a>
+                <a href="https://www.linkedin.com/in/david-ismael-enr%C3%ADquez-224b3a21a/" target='_blank'><img src={navIcon1} alt="Icon" /></a>
+                <a href="https://github.com/Ismanaos" target='_blank'><img src={navIcon3} alt="Icon" /></a>
               </div>
               <HashLink to='#connect'>
                 <button className="vvd"><span>Let’s Connect</span></button>
