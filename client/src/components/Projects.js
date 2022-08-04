@@ -1,29 +1,49 @@
 import { Container, Row, Col, Tab, Nav } from "react-bootstrap";
 import { ProjectCard } from "./ProjectCard";
+import loginProject from "../assets/img/login.png";
 import projImg1 from "../assets/img/project-img1.png";
-import projImg2 from "../assets/img/project-img2.png";
-import projImg3 from "../assets/img/project-img3.png";
+import registerProject from "../assets/img/register.png";
+import SPAhome from "../assets/img/SPAhome.png";
+import SPAcreate from "../assets/img/SPAcreate.png";
+import SPAdetail from "../assets/img/SPAdetail.png";
 import colorSharp2 from "../assets/img/color-sharp2.png";
 import 'animate.css';
 import TrackVisibility from 'react-on-screen';
 
 export const Projects = () => {
 
-  const projects = [
+  const projectsOnDrive = [
     {
       title: "On Drive",
       description: "Design",
-      imgUrl: projImg1,
+      imgUrl: registerProject,
     },
     {
       title: "On Drive",
       description: "Development",
-      imgUrl: projImg2,
+      imgUrl: projImg1,
     },
     {
       title: "On Drive",
       description: "Design & Development",
-      imgUrl: projImg3,
+      imgUrl: loginProject,
+    },
+  ];
+  const projectsSPA = [
+    {
+      title: "SPA detail",
+      description: "Design & Development",
+      imgUrl: SPAdetail,
+    },
+    {
+      title: "SPA home",
+      description: "Design & Development",
+      imgUrl: SPAhome,
+    },
+    {
+      title: "SPA create",
+      description: "Design & Development",
+      imgUrl: SPAcreate,
     },
   ];
 
@@ -53,7 +73,7 @@ export const Projects = () => {
                     <Tab.Pane eventKey="first">
                       <Row>
                         {
-                          projects.map((project, index) => {
+                          projectsOnDrive.map((project, index) => {
                             return (
                               <ProjectCard
                                 key={index}
@@ -62,16 +82,28 @@ export const Projects = () => {
                             )
                           })
                         }
+                        <p>A project that I carried out together with my colleagues from Henry with agile methodologies, deals with a service where long-distance trips are requested</p>
                       </Row>
                     </Tab.Pane>
                     <Tab.Pane eventKey="section">
-                      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque quam, quod neque provident velit, rem explicabo excepturi id illo molestiae blanditiis, eligendi dicta officiis asperiores delectus quasi inventore debitis quo.</p>
                     </Tab.Pane>
                     <Tab.Pane eventKey="second">
-                      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque quam, quod neque provident velit, rem explicabo excepturi id illo molestiae blanditiis, eligendi dicta officiis asperiores delectus quasi inventore debitis quo.</p>
+                    <Row>
+                        {
+                          projectsSPA.map((project, index) => {
+                            return (
+                              <ProjectCard
+                              key={index}
+                              {...project}
+                              />
+                              )
+                            })
+                          }
+                          <p>My first website, I developed the front end and the back end in 2 weeks</p>
+                      </Row>
                     </Tab.Pane>
                     <Tab.Pane eventKey="third">
-                      <p>In process a React-App from football</p>
+                      <p>In process a React-App where you can adopt dogs and publish those that are lost</p>
                     </Tab.Pane>
                   </Tab.Content>
                 </Tab.Container>
