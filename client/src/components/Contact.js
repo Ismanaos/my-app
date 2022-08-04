@@ -11,11 +11,11 @@ import { API_URL } from "../config/enviroment";
 const controlForm = (input) => {
   let errors = {};
   const reg = new RegExp("[a-zA-Z ]{2,254}")
-  const regMessage = new RegExp("[a-zA-Z-0-9]{20,254}")
+  const regMessage = new RegExp("[a-zA-Z-0-9  ]{15,254}")
   if(!input.firstName || !reg.test(input.firstName)) errors.firstName = 'error';
   if(!input.lastName || !reg.test(input.lastName)) errors.lastName = 'error';
   if(!input.email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(input.email)) errors.email = 'error';
-  if(!input.message || !regMessage.test(input.message)) errors.message = 'Your message must be at least 20 characters';
+  if(!input.message || !regMessage.test(input.message)) errors.message = 'Your message must be at least 15 characters';
   return errors
 }
 
