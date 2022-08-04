@@ -63,9 +63,24 @@ button {
   background-color: transparent;
 }
 
+.modal{
+  color: #121212;
+}
+
 input:focus, textarea:focus, select:focus {
   outline: none;
 }
+textarea.danger{
+  border: 1px solid #ff0000;
+}
+textarea.success{
+  border: 1px solid #00ff00;
+}
+
+input.danger{
+  outline: #ff0000 solid 2px;
+}
+
 
 @media (min-width:1700px) {
 	main .container {
@@ -78,8 +93,9 @@ p.success {
 	color: green;
 }
 
+
 p.danger {
-	color: red;
+	color: #ad0000;
 }
 /************ Navbar Css ************/
 nav.navbar {

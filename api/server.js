@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require("express");
 const router = express.Router();
 const cors = require("cors");
@@ -10,8 +11,6 @@ app.use(cors());
 app.use(express.json());
 app.use("/", router);
 app.listen(PORT, () => console.log("Server Running"));
-console.log(process.env.EMAIL_USER);
-console.log(process.env.EMAIL_PASS);
 
 const contactEmail = nodemailer.createTransport({
   service: 'gmail',
@@ -49,21 +48,4 @@ router.post("/contact", (req, res) => {
     }
   });
 });
-
-router.post('/connect', (req, res) => {
-  const {email, message} = req.body;
-  const mail = {
-    from: email,
-    to: GMAIL,
-    subject: "Contacto por submit - Portfolio",
-    html: `<p>Message: ${message}</p>`,
-  };
-  contactEmail.sendMail(mail, (error) => {
-    if (error) {
-      res.json(error);
-    } else {
-      res.json({ code: 200, status: "Message Sent" });
-    }
-  })
-})
 
