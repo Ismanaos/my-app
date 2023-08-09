@@ -3,9 +3,12 @@ import { ProjectCard } from "./ProjectCard";
 import loginProject from "../assets/img/login.png";
 import projImg1 from "../assets/img/project-img1.png";
 import registerProject from "../assets/img/register.png";
-import SPAhome from "../assets/img/SPAhome.png";
-import SPAcreate from "../assets/img/SPAcreate.png";
-import SPAdetail from "../assets/img/SPAdetail.png";
+import contabilidadCanela from "../assets/img/contabilidadCanela.png";
+import contactoAxel from "../assets/img/contactoAxel.png";
+import contactoAxelLanding from "../assets/img/contactoAxelLanding.png";
+import landingAxel from "../assets/img/landingAxel.png";
+import landingCanela from "../assets/img/landingCanela.png";
+import cuentasCanela from "../assets/img/cuentasCanela.png";
 import colorSharp2 from "../assets/img/color-sharp2.png";
 import 'animate.css';
 import TrackVisibility from 'react-on-screen';
@@ -29,23 +32,40 @@ export const Projects = () => {
       imgUrl: loginProject,
     },
   ];
-  const projectsSPA = [
+  const projectsAxel = [
     {
-      title: "SPA detail",
+      title: "Landing",
       description: "Design & Development",
-      imgUrl: SPAdetail,
+      imgUrl: landingAxel,
     },
     {
-      title: "SPA home",
+      title: "Contacto Landing",
       description: "Design & Development",
-      imgUrl: SPAhome,
+      imgUrl: contactoAxelLanding,
     },
     {
-      title: "SPA create",
+      title: "Contacto",
       description: "Design & Development",
-      imgUrl: SPAcreate,
+      imgUrl: contactoAxel,
     },
   ];
+  const projectsCanela = [
+    {
+      title: 'Canela Landing',
+      description: 'Design & Development',
+      imgUrl: landingCanela
+    },
+    {
+      title: 'Canela Contability',
+      description: 'Design & Development',
+      imgUrl: contabilidadCanela
+    },
+    {
+      title: 'Canela Accounts Payable',
+      description: 'Design & Development',
+      imgUrl: cuentasCanela
+    }
+  ]
 
   return (
     <section className="project" id="project">
@@ -90,7 +110,7 @@ export const Projects = () => {
                     <Tab.Pane eventKey="second">
                     <Row>
                         {
-                          projectsSPA.map((project, index) => {
+                          projectsCanela.map((project, index) => {
                             return (
                               <ProjectCard
                               key={index}
@@ -99,11 +119,23 @@ export const Projects = () => {
                               )
                             })
                           }
-                          <p>My first website, I developed the front end and the back end in 2 weeks</p>
+                          <p>My first freelance project for a company that needed an administration system.</p>
                       </Row>
                     </Tab.Pane>
                     <Tab.Pane eventKey="third">
-                      <p>In process a React-App where you can adopt dogs and publish those that are lost</p>
+                    <Row>
+                        {
+                          projectsAxel.map((project, index) => {
+                            return (
+                              <ProjectCard
+                              key={index}
+                              {...project}
+                              />
+                              )
+                            })
+                        }
+                        <p>One of my latest projects for a construction company.</p>
+                      </Row>
                     </Tab.Pane>
                   </Tab.Content>
                 </Tab.Container>
